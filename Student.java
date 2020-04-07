@@ -55,3 +55,26 @@ class Student {
 		return kredit;
 	}
 }
+
+
+ class Faculty {
+	String name;
+	List<Student> list;
+
+	public Faculty(String name) {
+		this.name = name;
+		this.list=new ArrayList<>();
+
+	}
+	public void add(Student student){
+		list.add(student);
+
+	}
+	public  void remove(Student student){
+		list.remove(student);
+
+	}
+	public double avg(){
+		return list.stream().mapToDouble(s->s.getAverage()).average().getAsDouble();
+	}
+}
